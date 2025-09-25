@@ -1,3 +1,26 @@
-{{
-    nom
-}}
+{{ nom  | upper}} <br>
+{{ '&medAli'  | lower | trim('&')}} <br>
+
+{# : commentaire#}
+
+{% set hour = 15 %}
+
+{% set a = "Hello" %}
+{{a}} <br>
+
+{% for i in 0..9 %}
+{{ i }}
+{% endfor %}
+
+{% if hour < 12 %}
+<p>Bonjour!</p>
+{% elseif hour < 18 %}
+<p>Bon apres midi</p>
+{% else %}
+<p>Bonsoir</p>
+{% endif %}
+
+<a href="{{path('app_auth')}}">Lien 1</a> <br>
+<a href="{{url('app_auth')}}">Lien 2</a><br>
+
+<img src = "{{asset('assets/images/image.jpg')}}">
