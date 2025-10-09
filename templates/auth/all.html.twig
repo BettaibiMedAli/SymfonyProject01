@@ -4,6 +4,7 @@
             <th> id </th>
             <th> username </th>
             <th> email </th>
+            <th> actions </th>
         </tr>
     </thead>
     {% for i in authors %}
@@ -11,6 +12,13 @@
             <td>{{ i.id }}</td>
             <td>{{ i.username }}</td>
             <td>{{ i.email }}</td>
+            <td>
+                <a href="{{path('deleteAuthor',{'id':i.id})}}">delete</a>   {# path or url #}
+                <a href="{{path('authorDetails',{'id':i.id})}}">show</a>
+                <a href="">update</a>
+            </td>
         </tr>
     {% endfor %}
 </table>
+
+<a href="{{ path('addForm') }}">Add Author</a>
